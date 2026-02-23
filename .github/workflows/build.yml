@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: NONE
+#
+# SPDX-License-Identifier: CC0-1.0
+
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+      - name: Setup Zig
+        uses: mlugg/setup-zig@v2
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Build
+        run: zig build -Doptimize=ReleaseSmall
+      - name: Upload the artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: winqcc.exe
+          path: zig-out/bin/winqcc.exe
