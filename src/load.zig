@@ -15,7 +15,7 @@ pub fn load(allocator: std.mem.Allocator, id: []const u8) !void {
 
     const file = try std.fs.openFileAbsolute(config_path, .{});
 
-    const config_str = try file.readToEndAllocOptions(allocator, 1024, null, .@"8", 0);
+    const config_str = try file.readToEndAllocOptions(allocator, 51200, null, .@"8", 0);
     // TODO: Zig 0.16では:
     // var reader = file.reader(&.{});
     // const config_str = try reader.interface.allocRemainingAlignedSentinel(allocator, .unlimited, .@"8", 0);

@@ -73,7 +73,7 @@ pub fn save(allocator: std.mem.Allocator) !void {
 
     const config_path = try std.fs.path.join(allocator, &[_][]const u8{ cursor_dir, "config.zon" });
     const config_file = try std.fs.createFileAbsolute(config_path, .{});
-    var writer_buf: [1024]u8 = undefined;
+    var writer_buf: [51200]u8 = undefined;
     var write = config_file.writer(&writer_buf);
     const writer = &write.interface;
 
