@@ -1,0 +1,26 @@
+// SPDX-FileCopyrightText: NONE
+//
+// SPDX-License-Identifier: CC0-1.0
+
+.{
+    .name = .winqcc,
+    .version = "0.1.0",
+    .fingerprint = 0x276603373680f67e,
+    .minimum_zig_version = "0.15.2",
+    .dependencies = .{
+        .zigwin32 = .{
+            .url = "git+https://github.com/marlersoft/zigwin32.git#26f3ccffb5630dfe23fcda1f00d75d46147b5a60",
+            .hash = "zigwin32-25.0.28-preview-AAAAAIMW5QN6mjC6PSZmBowvhalmYcMRnztDdKvJXAUz",
+        },
+        .known_folders = .{
+            .url = "git+https://github.com/ziglibs/known-folders.git#83d39161eac2ed6f37ad3cb4d9dd518696ce90bb",
+            .hash = "known_folders-0.0.0-Fy-PJv3LAAABBRVoZWVrKZdyLoUfl5VRY5fqRRRdnF5L",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "LICENSES",
+    },
+}
