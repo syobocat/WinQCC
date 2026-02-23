@@ -17,6 +17,9 @@ const toWideAlloc = std.unicode.utf8ToUtf16LeAllocZ;
 const toUtf8Alloc = std.unicode.utf16LeToUtf8AllocZ;
 
 pub fn createLink(allocator: std.mem.Allocator, exe_path: []const u8, arg: []const u8, save_path: []const u8) !void {
+    _ = com.CoInitializeEx(null, .{});
+    defer com.CoUninitialize();
+
     var shell_link: *shell.IShellLinkW = undefined;
     defer _ = shell_link.IUnknown.Release();
     const create_res = com.CoCreateInstance(
